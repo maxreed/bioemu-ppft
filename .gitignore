@@ -1,0 +1,54 @@
+# ============================================
+# Large Model Files - DO NOT SYNC
+# ============================================
+checkpoints/**/*.ckpt
+checkpoints/**/*.npz
+*.ckpt
+*.npz
+
+# ============================================
+# Data Files - DO NOT SYNC
+# ============================================
+# MSAs and embeddings (can regenerate)
+data/msas/*.a3m
+data/msas/*.pickle
+data/embeddings/
+*.npy
+
+# Reference structures (download separately)
+data/reference_pdbs/*.pdb
+
+# Generated outputs (recreate on each machine)
+outputs/
+logs/
+*.log
+
+# Temporary files
+tmp/
+scratch/
+*.tmp
+
+# ============================================
+# Python Environment - DO NOT SYNC
+# ============================================
+bioemu_env/
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*.egg-info/
+
+# ============================================
+# Cache Directories - DO NOT SYNC
+# ============================================
+.cache/
+.bioemu_embeds_cache/
+.bioemu_colabfold/
+__pycache__/
+
+# ============================================
+# System Files
+# ============================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
