@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
 #SBATCH --gres=gpu:h100:1       # Number of GPUs (per node)
-#SBATCH --mem=4G                # memory (per node)
+#SBATCH --mem=16G               # memory (per node)
 #SBATCH --time=0-01:00          # time (DD-HH:MM)
 #SBATCH --output=test_job.log
 
