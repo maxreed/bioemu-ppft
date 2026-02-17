@@ -4,7 +4,7 @@ import mdtraj
 # i can replace these with the parameters for the state calculation.
 residue_pairs = [[34,87],[60,87]] # these are the three pairs of residues we care about
 # recall that state 1 has larger distances (above thresholds), state 2 has smaller distances (below thresholds)
-residue_pair_thresholds = np.array([22.5,16.4]) # giving distances in angstroms to be consistent with bioemu
+residue_pair_thresholds = np.array([25,18]) # giving distances in angstroms to be consistent with bioemu
 residue_pair_k = np.array([4,4]) # i picked these arbitrarily
 
 # this classifies ras sequences as being in states 1 or 2 (though state classification is continuous from 0 to 1)
