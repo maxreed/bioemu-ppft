@@ -22,6 +22,6 @@ def getState(traj: mdtraj.Trajectory, res_pairs=residue_pairs, thresholds=residu
 	return 1 / (1 + np.exp(np.sum((distances - residue_pair_thresholds) * residue_pair_k,axis=1)))
 
 if __name__=="__main__":
-	test_traj = mdtraj.load_xtc("test_RAS_WT/samples.xtc", top="test_RAS_WT/topology.pdb")
+	test_traj = mdtraj.load_xtc("test_RAS_wt/samples.xtc", top="test_RAS_wt/topology.pdb")
 	state_classification = getState(test_traj)
 	print("WT:\t" + str(np.sum(state_classification) / len(state_classification)))
