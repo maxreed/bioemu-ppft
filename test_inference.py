@@ -2,13 +2,14 @@
 """
 Test BioEmu inference on GPU. (You need to request a GPU node before running this).
 This script exists because Rorqual compute nodes can't access the internet.
-This script assumes you have already generated single and pair embeddings for your sequence (you can use get_colabfold_embeds if you have BioEmu
-installed), then copied those into $HOME/.bioemu_embeds_cache.
+This script assumes you have already generated single and pair embeddings for your sequence (you can use get_colabfold_embeds on a local machine
+if you have BioEmu installed), then copied those into $HOME/.bioemu_embeds_cache.
 If you have done that, BioEmu will look in that directory for the query sequence embeddings (it will ALWAYS do this by default). Naming is done via
 hashlib, so it'll find it so long as naming is left unchanged from what get_colabfold_embeds uses.
 Because this avoids having to query the MSA server (which requires internet) this means that it allows BioEmu to run on a compute node.
 Now, you can also just feed in an MSA (made by colabfold_batch or whatever other program you like). That ALSO allows BioEmu to run on a compute
-node, and it's probably the better thing to do. That having been said, because embeddings are only generated once, I really don't think it matters
+node, and it's probably the better thing to do - the only difference is feeding an MSA results in colabfold running the EvoFormer the very first time
+you run BioEmu for a particular sequence. That having been said, because embeddings are only generated once, I really don't think it matters
 what approach you use.
 Look in test_job.sh to see the example of how to do this with an input MSA instead of pre-computed embeddings.
 """
