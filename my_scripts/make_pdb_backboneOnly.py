@@ -13,9 +13,7 @@ Usage as a module:
     for idx, (topology, positions_A) in enumerate(
             generate_backboneonly_frames(
                 pdb_path="input.pdb",
-                xtc_path="traj.xtc",
-                ffxml="amber99sb.xml",
-                pH=7.0
+                xtc_path="traj.xtc"
             ), start=1
         ):
         # topology is an OpenMM Topology
@@ -46,7 +44,7 @@ def generate_backboneonly_frames(pdb_path, xtc_path):
 
     Yields:
       topology      : an openmm.app.Topology object
-      positions_A   : list of Vec3 positions in Å for this frame (heavy + H)
+      positions_A   : list of Vec3 positions in Å for this frame
     """
     # 1) Load & convert PDB → nm
     pdb = PDBFile(pdb_path)
@@ -74,7 +72,7 @@ def generate_backboneonly_frames(pdb_path, xtc_path):
 
 def main():
     p = argparse.ArgumentParser(
-        description="Make a multimodel PDB with per-frame protonation (Å↔nm handling)."
+        description="Make a multimodel PDB from a BioEmu trajectory (Å↔nm handling)."
     )
     p.add_argument('--pdb',   required=True, help="Input PDB (Å)")
     p.add_argument('--xtc',   required=True, help="Input trajectory XTC")
