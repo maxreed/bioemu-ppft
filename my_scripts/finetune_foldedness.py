@@ -11,8 +11,8 @@ Approach:
 
 Data requirements:
 - A CSV with columns "mutant_name" and "percent_folded"
-- A directory of pre-computed ColabFold embeddings, one subdirectory per mutant,
-  each containing the .npy files produced by get_colabfold_embeds() (single_embeds and pair_embeds).
+- A flat directory of pre-computed ColabFold embeddings produced by get_colabfold_embeds(),
+  containing files named {sha256(sequence)}_single.npy and {sha256(sequence)}_pair.npy.
   These must be pre-cached before training (run bioemu's get_colabfold_embeds on a node
   with internet access, or on the login node, for each mutant's .a3m file).
 
@@ -28,6 +28,7 @@ import logging
 import os
 from pathlib import Path
 
+import hashlib
 import numpy as np
 import pandas as pd
 import torch
@@ -43,7 +44,6 @@ from torch.utils.data import Dataset, DataLoader
 from torch_geometric.data.batch import Batch
 
 from bioemu.chemgraph import ChemGraph
-from bioemu.get_embeds import get_colabfold_embeds
 from bioemu.model_utils import load_model, load_sdes, maybe_download_checkpoint
 from bioemu.denoiser import dpm_solver, get_score
 from bioemu.sde_lib import SDE
@@ -181,11 +181,9 @@ class FoldednessDataset(Dataset):
 
     Args:
         foldedness_csv: Path to CSV with columns "mutant_name" and "percent_folded".
-        embeds_dir: Directory containing one subdirectory per mutant, each with
-                    the .npy embedding files from get_colabfold_embeds().
+        embeds_dir: Flat cache directory produced by get_colabfold_embeds(), containing
+                    files named {sha256(sequence)}_single.npy and {sha256(sequence)}_pair.npy.
         sequence_map: Dict mapping mutant_name -> amino acid sequence string.
-                      If None, sequences will be read from the embeddings directory
-                      (you may need to adapt this).
     """
 
     def __init__(
@@ -204,28 +202,33 @@ class FoldednessDataset(Dataset):
         self.records = []
         for _, row in df.iterrows():
             name = row["mutant_name"]
-            target = float(row["percent_folded"]) / 100.0  # Convert % to [0,1]
-
-            mutant_embeds_dir = self.embeds_dir / name
-            # get_colabfold_embeds caches files with specific naming conventions.
-            # Adjust these glob patterns if your cache layout differs.
-            single_files = list(mutant_embeds_dir.glob("*single*.npy"))
-            pair_files = list(mutant_embeds_dir.glob("*pair*.npy"))
-
-            if not single_files or not pair_files:
-                logger.warning(f"Missing embedding files for {name}, skipping.")
-                continue
+            target = float(row["percent_folded"])
 
             if name not in sequence_map:
                 logger.warning(f"No sequence found for {name}, skipping.")
                 continue
 
+            seq = sequence_map[name]
+            seqsha = hashlib.sha256(seq.encode()).hexdigest()
+
+            # get_colabfold_embeds stores all embeddings flat in cache_embeds_dir,
+            # named {sha256(sequence)}_single.npy and {sha256(sequence)}_pair.npy.
+            single_file = self.embeds_dir / f"{seqsha}_single.npy"
+            pair_file = self.embeds_dir / f"{seqsha}_pair.npy"
+
+            if not single_file.exists() or not pair_file.exists():
+                logger.warning(
+                    f"Missing embedding files for {name} (sha={seqsha[:8]}...), skipping. "
+                    f"Run get_colabfold_embeds() for this sequence on a node with internet access."
+                )
+                continue
+
             self.records.append({
                 "mutant_name": name,
-                "sequence": sequence_map[name],
+                "sequence": seq,
                 "target_foldedness": target,
-                "single_embeds_file": single_files[0],
-                "pair_embeds_file": pair_files[0],
+                "single_embeds_file": single_file,
+                "pair_embeds_file": pair_file,
             })
 
         logger.info(f"Loaded {len(self.records)} mutants from {foldedness_csv}.")
@@ -492,7 +495,7 @@ def main(args):
     devices = args.gpus if accelerator == "gpu" else "auto"
 
     # Load pretrained model
-    ckpt_path, model_config_path = maybe_download_checkpoint(model_name=args.model_name)
+    ckpt_path, model_config_path = maybe_download_checkpoint(model_name=args.model_name) # i can change this to point straight to the checkpoints, or make it an argument
     sdes = load_sdes(model_config_path, cache_so3_dir=args.cache_so3)
     score_model = load_score_model(ckpt_path, model_config_path)
 
@@ -507,6 +510,7 @@ def main(args):
     )
     # For now, use the same dataset for validation with a fixed subset.
     # TODO: split into separate train/val CSVs once you have enough data.
+    # i'm inclined to just change this now, it's a bit silly that it was ever set this way...
     val_dataset = train_dataset
 
     train_loader = DataLoader(
@@ -572,7 +576,7 @@ if __name__ == "__main__":
 
     # Required positional args
     parser.add_argument("embeds_dir", type=str,
-        help="Directory of pre-cached ColabFold embeddings, one subdir per mutant.")
+        help="Flat cache directory produced by get_colabfold_embeds() (contains {sha256}_single/pair.npy files).")
     parser.add_argument("foldedness_csv", type=str,
         help="CSV with columns 'mutant_name' and 'percent_folded'.")
     parser.add_argument("output_dir", type=str,
