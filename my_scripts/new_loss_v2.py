@@ -1,8 +1,11 @@
+# yields similar results to new_loss.py. for now i'll stick to the trio of residue pairs suggested by osama and enrico.
+
 import numpy as np
 import mdtraj
 
 # i can replace these with the parameters for the state calculation.
-residue_pairs = [[34,87],[60,87]] # these are the three pairs of residues we care about
+# this is a new pair of two residue-residue distances to try. comes from analyzing bioemu of kras wt results to find residue-residue distances that undergo large changes.
+residue_pairs = [[34,87],[60,87]]
 # recall that state 1 has larger distances (above thresholds), state 2 has smaller distances (below thresholds)
 residue_pair_thresholds = np.array([25,18]) # giving distances in angstroms to be consistent with bioemu
 residue_pair_k = np.array([4,4]) # i picked these arbitrarily

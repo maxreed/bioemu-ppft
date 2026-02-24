@@ -70,7 +70,7 @@ residue_pair_k = np.array([4,4,4]) # i picked these arbitrarily
 # My extra special vibes-based foldedness function
 # =============================================================================
 def compute_foldedness(traj: mdtraj.Trajectory, **kwargs) -> float:
-    CA_indices = traj.topology.select('name CA')
+    CA_indices = traj.topology.select('name CA') # not sure if we need this anymore, since chemgraph_to_traj strips down to CA-only anyway.
     CA_coords = traj.xyz[:, CA_indices, :] # WT_CA_coords[0] gives all CA coordinates of the first frame
     distances = []
     for frame in CA_coords:
