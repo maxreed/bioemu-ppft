@@ -59,32 +59,28 @@ _NODE_LABEL_MAPPING: dict[str, int] = {
     "U": 21, "O": 22, "X": 0, "B": 23, "Z": 25,
 }
 
+# variables for compute_foldedness.
+# "if every function passes the same variables you may as well use globals" - kai lentit
+residue_pairs = [[11,60],[12,31],[64,94]] # these are the three pairs of residues we care about
+# recall that state 1 has larger distances (above thresholds), state 2 has smaller distances (below thresholds)
+residue_pair_thresholds = np.array([6.5,11.5,13.5]) # giving distances in angstroms to be consistent with bioemu
+residue_pair_k = np.array([4,4,4]) # i picked these arbitrarily
 
 # =============================================================================
-# Custom foldedness function — FILL THIS IN
+# My extra special vibes-based foldedness function
 # =============================================================================
 def compute_foldedness(traj: mdtraj.Trajectory, **kwargs) -> float:
-    """
-    Compute a continuous foldedness score for a single structure.
-
-    Args:
-        traj: mdtraj.Trajectory with a single frame (the generated structure).
-              Coordinates are in nanometres (bioemu convention).
-        **kwargs: Any hyperparameters your function needs (distance thresholds, etc.).
-
-    Returns:
-        A float in [0, 1]: 0 = unfolded, 1 = folded.
-
-    Notes:
-    - The positions coming from bioemu are CA-only, in nm.
-    - You likely want to select CA atoms and compute inter-residue distances,
-      then classify based on your known folded/unfolded distance ranges.
-    - Replace the body of this function with your actual implementation.
-    """
-    raise NotImplementedError(
-        "Replace this with your custom foldedness function. "
-        "It should accept an mdtraj.Trajectory and return a float in [0, 1]."
-    )
+    CA_indices = traj.topology.select('name CA')
+    CA_coords = traj.xyz[:, CA_indices, :] # WT_CA_coords[0] gives all CA coordinates of the first frame
+    distances = []
+    for frame in CA_coords:
+        these_distances =[]
+        for residue_pair in residue_pairs:
+            this_distance = np.linalg.norm(frame[residue_pair[0]] - frame[residue_pair[1]]) * 10 # * 10 to convert to angstroms
+            these_distances.append(this_distance)
+        distances.append(these_distances)
+    distances = np.array(distances)
+    return 1 / (1 + np.exp(np.sum((distances - residue_pair_thresholds) * residue_pair_k,axis=1)))
 
 
 # =============================================================================
