@@ -12,9 +12,10 @@ def main():
 
     num_states = int(args.num_states)
     msa_files = glob.glob(os.path.join(args.m3a_dir, "*" + ".a3m"))
-    print(msa_files)
 
-    #sample(sequence='data/msa_kras_mutants/Y40F.a3m', num_samples=1000, output_dir='test_RAS_Y40F')
+    for msa_file in msa_files:
+        print("Running BioEmu for " + os.path.basename(msa_file)[:-4] + "...") # -4 in the msa_file index removes the .a3m ending
+        sample(sequence=msa_file, num_samples=num_states, output_dir= args.out_dir + "/KRAS_" + os.path.basename(msa_file)[:-4])
 
 if __name__ == "__main__":
     main()
