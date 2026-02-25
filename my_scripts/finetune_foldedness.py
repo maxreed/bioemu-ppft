@@ -44,7 +44,7 @@ from torch.utils.data import Dataset, DataLoader
 from torch_geometric.data.batch import Batch
 
 from bioemu.chemgraph import ChemGraph
-from bioemu.model_utils import load_model, load_sdes, maybe_download_checkpoint
+from bioemu.model_utils import load_sdes
 from bioemu.denoiser import dpm_solver, get_score
 from bioemu.sde_lib import SDE
 from bioemu.so3_sde import SO3SDE
@@ -143,6 +143,7 @@ def load_context_chemgraph(
 
     assert pair_embeds.shape[0] == pair_embeds.shape[1] == n
     assert single_embeds.shape[0] == n
+    # for the record, i checked and the single and pair reps for KRAS (which is 169 AA) are (169, 384) and (169, 169, 128) respectively.
 
     _, _, n_pair_feats = pair_embeds.shape
     pair_embeds = pair_embeds.view(n**2, n_pair_feats)
@@ -180,7 +181,7 @@ class FoldednessDataset(Dataset):
         - "pair_embeds_file": Path
 
     Args:
-        foldedness_csv: Path to CSV with columns "mutant_name" and "percent_folded".
+        foldedness_csv: Path to CSV with columns "mutant_name" and "percent_folded", or a pre-split DataFrame.
         embeds_dir: Flat cache directory produced by get_colabfold_embeds(), containing
                     files named {sha256(sequence)}_single.npy and {sha256(sequence)}_pair.npy.
         sequence_map: Dict mapping mutant_name -> amino acid sequence string.
@@ -193,7 +194,8 @@ class FoldednessDataset(Dataset):
         sequence_map: dict[str, str],
     ):
         self.embeds_dir = Path(embeds_dir)
-        df = pd.read_csv(foldedness_csv)
+        # Accept either a file path or a pre-split DataFrame
+        df = pd.read_csv(foldedness_csv) if not isinstance(foldedness_csv, pd.DataFrame) else foldedness_csv
 
         # Validate required columns
         assert "mutant_name" in df.columns, "CSV must have a 'mutant_name' column"
@@ -374,10 +376,10 @@ class FoldednessFineTuner(pl.LightningModule):
         sdes: dict,
         lr: float = 1e-5,           # Low LR for fine-tuning
         weight_decay: float = 1e-2,
-        n_replications: int = 8,    # Structures generated per mutant per step
-        mid_t: float = 0.1,         # Rollout endpoint (lower = closer to clean)
-        N_rollout: int = 10,        # Number of denoising steps in rollout
-        record_grad_steps: tuple = (10,),  # Which rollout steps to record gradients through
+        n_replications: int = 8,    # Structures per mutant; minimum 2, paper used 2; more = lower variance, higher cost
+        mid_t: float = 0.77,        # Rollout endpoint; ~0.77 matches paper (8/35 explicit steps)
+        N_rollout: int = 8,         # Number of explicit denoising steps (paper used 8 out of 35 total)
+        record_grad_steps: tuple = (6, 7, 8),  # Last 3 of 8 explicit steps; matches paper (steps 3,4,5 of 5 grad steps)
         foldedness_kwargs: dict = None,    # Extra kwargs for compute_foldedness
     ):
         super().__init__()
@@ -458,12 +460,12 @@ class FoldednessFineTuner(pl.LightningModule):
 # =============================================================================
 # Entry point
 # =============================================================================
-def load_score_model(ckpt_path, model_config_path):
-    """Load score model from checkpoint and config (from DeltaFold repo)."""
-    from bioemu.model_utils import load_model_state_dict
+def load_score_model(ckpt_path: Path, model_config_path: Path):
+    """Load score model from checkpoint and config."""
     from bioemu.models import DiGConditionalScoreModel
 
-    model_state = load_model_state_dict(ckpt_path, model_config_path)
+    assert ckpt_path.is_file(), f"Checkpoint not found: {ckpt_path}"
+    model_state = torch.load(ckpt_path, map_location="cpu", weights_only=True)
     with open(model_config_path) as f:
         model_config = yaml.safe_load(f)
     score_model: DiGConditionalScoreModel = hydra.utils.instantiate(model_config["score_model"])
@@ -494,24 +496,35 @@ def main(args):
     accelerator = "gpu" if torch.cuda.is_available() and args.gpus > 0 else "cpu"
     devices = args.gpus if accelerator == "gpu" else "auto"
 
-    # Load pretrained model
-    ckpt_path, model_config_path = maybe_download_checkpoint(model_name=args.model_name) # i can change this to point straight to the checkpoints, or make it an argument
+    # Load pretrained model directly from provided paths (no download needed)
+    ckpt_path = Path(args.ckpt_path)
+    model_config_path = Path(args.model_config_path)
+    assert ckpt_path.exists(), f"Checkpoint not found: {ckpt_path}"
+    assert model_config_path.exists(), f"Model config not found: {model_config_path}"
     sdes = load_sdes(model_config_path, cache_so3_dir=args.cache_so3)
     score_model = load_score_model(ckpt_path, model_config_path)
 
     # Load sequence map (mutant_name -> sequence)
     sequence_map = load_sequence_map(args.sequence_map)
 
-    # Datasets
+    # 80/20 random train/val split.
+    # If results are noisy, consider stratified splitting by percent_folded
+    # to ensure both sets cover the full range of foldedness values.
+    full_df = pd.read_csv(args.foldedness_csv)
+    train_df = full_df.sample(frac=0.8, random_state=args.seed if args.seed is not None else 42)
+    val_df = full_df.drop(train_df.index)
+    logger.info(f"Split: {len(train_df)} train / {len(val_df)} val mutants.")
+
     train_dataset = FoldednessDataset(
-        foldedness_csv=args.foldedness_csv,
+        foldedness_csv=train_df,
         embeds_dir=args.embeds_dir,
         sequence_map=sequence_map,
     )
-    # For now, use the same dataset for validation with a fixed subset.
-    # TODO: split into separate train/val CSVs once you have enough data.
-    # i'm inclined to just change this now, it's a bit silly that it was ever set this way...
-    val_dataset = train_dataset
+    val_dataset = FoldednessDataset(
+        foldedness_csv=val_df,
+        embeds_dir=args.embeds_dir,
+        sequence_map=sequence_map,
+    )
 
     train_loader = DataLoader(
         train_dataset,
@@ -584,9 +597,13 @@ if __name__ == "__main__":
     parser.add_argument("sequence_map", type=str,
         help="CSV with columns 'mutant_name' and 'sequence'.")
 
-    # Model
-    parser.add_argument("--model_name", type=str, default="bioemu-v1.1",
-        help="BioEmu pretrained model to fine-tune.")
+    # Model paths (provide directly; no download needed)
+    parser.add_argument("--ckpt_path", type=str,
+        default="checkpoints/bioemu-v1.1/checkpoint.ckpt",
+        help="Path to BioEmu checkpoint file (.ckpt).")
+    parser.add_argument("--model_config_path", type=str,
+        default="checkpoints/bioemu-v1.1/config.yaml",
+        help="Path to BioEmu model config file (.yaml).")
     parser.add_argument("--cache_so3", type=str, default=None,
         help="Directory for SO(3) heat kernel lookup tables.")
 
@@ -604,12 +621,12 @@ if __name__ == "__main__":
     # Rollout hyperparameters (from loss.py PPFT approach)
     parser.add_argument("--n_replications", type=int, default=8,
         help="Structures generated per mutant per step.")
-    parser.add_argument("--mid_t", type=float, default=0.1,
-        help="Rollout endpoint time (lower = closer to clean structure).")
-    parser.add_argument("--N_rollout", type=int, default=10,
-        help="Number of denoising steps in rollout.")
-    parser.add_argument("--record_grad_steps", type=int, nargs="+", default=[10],
-        help="Which rollout steps to record gradients through (1-indexed).")
+    parser.add_argument("--mid_t", type=float, default=0.77,
+        help="Rollout endpoint time. ~0.77 matches paper (8 explicit steps out of 35 total).")
+    parser.add_argument("--N_rollout", type=int, default=8,
+        help="Number of explicit denoising steps before the skip-to-x0 jump (paper used 8).")
+    parser.add_argument("--record_grad_steps", type=int, nargs="+", default=[6, 7, 8],
+        help="Which of the N_rollout steps to record gradients through (1-indexed). Paper used last 3 of 8.")
 
     args = parser.parse_args()
     main(args)
