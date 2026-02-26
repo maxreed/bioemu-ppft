@@ -537,6 +537,9 @@ def load_sequence_map(sequence_map_path: str | Path) -> dict[str, str]:
 def main(args):
     logging.basicConfig(level=logging.INFO)
 
+    # this should help reduce GPU memory requirements
+    torch.set_float32_matmul_precision('medium')
+
     if args.seed is not None:
         seed_everything(args.seed, workers=True)
 
