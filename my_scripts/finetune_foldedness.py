@@ -427,6 +427,7 @@ class FoldednessFineTuner(pl.LightningModule):
         N_rollout: int = 8,         # Number of explicit denoising steps (paper used 8 out of 35 total)
         record_grad_steps: tuple = (6, 7, 8),  # Last 3 of 8 explicit steps; matches paper (steps 3,4,5 of 5 grad steps)
         foldedness_kwargs: dict = None,    # Extra kwargs for compute_foldedness
+        freeze_fraction: float = 0.8,  # Fraction of layers to freeze (0.0 = train all, 1.0 = freeze all)
     ):
         super().__init__()
         self.save_hyperparameters(ignore=["score_model", "sdes"])
@@ -440,9 +441,34 @@ class FoldednessFineTuner(pl.LightningModule):
         self.record_grad_steps = set(record_grad_steps)
         self.foldedness_kwargs = foldedness_kwargs or {}
 
+        # Partial freezing: freeze the first `freeze_fraction` of named parameters.
+        # Parameters are ordered roughly from input to output in a PyTorch module,
+        # so this freezes early/middle layers and leaves the final layers trainable.
+        # With freeze_fraction=0.8, ~80% of parameters are frozen and only the last
+        # ~20% (the output layers closest to the structure prediction) are updated.
+        # This preserves the pretrained prior while allowing task-specific adaptation.
+        if freeze_fraction > 0.0:
+            all_params = list(self.score_model.named_parameters())
+            n_freeze = int(len(all_params) * freeze_fraction)
+            frozen, trainable = 0, 0
+            for i, (name, param) in enumerate(all_params):
+                if i < n_freeze:
+                    param.requires_grad = False
+                    frozen += param.numel()
+                else:
+                    param.requires_grad = True
+                    trainable += param.numel()
+            logger.info(
+                f"Partial freezing: {n_freeze}/{len(all_params)} parameter tensors frozen "
+                f"({frozen:,} frozen params, {trainable:,} trainable params)."
+            )
+
     def configure_optimizers(self):
+        # Only pass parameters that require gradients to the optimizer.
+        # Frozen parameters (requires_grad=False) are automatically excluded.
+        trainable_params = [p for p in self.score_model.parameters() if p.requires_grad]
         return torch.optim.AdamW(
-            self.score_model.parameters(),
+            trainable_params,
             lr=self.lr,
             weight_decay=self.weight_decay,
         )
@@ -599,6 +625,7 @@ def main(args):
         mid_t=args.mid_t,
         N_rollout=args.N_rollout,
         record_grad_steps=tuple(args.record_grad_steps),
+        freeze_fraction=args.freeze_fraction,
     )
 
     logger_wb = WandbLogger(
@@ -667,6 +694,13 @@ if __name__ == "__main__":
     parser.add_argument("--precision", type=str, default="bf16")
     parser.add_argument("--log_every_n_steps", type=int, default=10)
     parser.add_argument("--accumulate_grad_batches", type=int, default=1)
+    parser.add_argument("--freeze_fraction", type=float, default=0.8,
+        help=(
+            "Fraction of score model parameter tensors to freeze (0.0 = train all, "
+            "1.0 = freeze all). Frozen layers preserve the pretrained prior; only the "
+            "final (1 - freeze_fraction) layers are updated. Default 0.8 is a good "
+            "starting point for a small dataset."
+        ))
 
     # Rollout hyperparameters (from loss.py PPFT approach)
     parser.add_argument("--n_replications", type=int, default=8,
