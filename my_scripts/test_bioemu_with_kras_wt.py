@@ -1,6 +1,6 @@
 from bioemu.sample import main as sample
 
-ckpt_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt4/bioemu_finetune_output_v4/checkpoints/bioemu-foldedness-epoch=10-val/kras_CEST_refined_v4_epoch10.ckpt'
+ckpt_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt4/bioemu_finetune_output_v4/checkpoints/kras_CEST_refined_v4_epoch10_bioemu.ckpt'
 
 model_config_path = '/home/pmmreed/links/scratch/2026-02-25_bioemu_refinement_KRAS_CEST_attempt1/checkpoints/bioemu-v1.1/config.yaml'
 
