@@ -24,15 +24,15 @@ def getState(traj: mdtraj.Trajectory, res_pairs=residue_pairs, thresholds=residu
 
 def main():
 	p = argparse.ArgumentParser(
-        description="Yield state 1 occupancy of a KRAS mutant, given a BioEmu ensemble."
-    )
-    p.add_argument('--pdb',   required=True, help="Input PDB (Å)")
-    p.add_argument('--xtc',   required=True, help="Input trajectory XTC")
-    p.add_argument('--name',   required=True, help="Name of Mutant")
-    args = p.parse_args()
+		description="Yield state 1 occupancy of a KRAS mutant, given a BioEmu ensemble."
+	)
+	p.add_argument('--pdb',   required=True, help="Input PDB (Å)")
+	p.add_argument('--xtc',   required=True, help="Input trajectory XTC")
+	p.add_argument('--name',   required=True, help="Name of Mutant")
+	args = p.parse_args()
 	test_traj = mdtraj.load_xtc(args.xtc, top=args.pdb)
 	state_classification = getState(test_traj)
 	print(args.name + ":\t" + str(np.sum(state_classification) / len(state_classification)))
 
 if __name__ == "__main__":
-    main()
+	main()
