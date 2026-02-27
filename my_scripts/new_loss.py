@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 import mdtraj
 
@@ -21,7 +22,17 @@ def getState(traj: mdtraj.Trajectory, res_pairs=residue_pairs, thresholds=residu
 	distances = np.array(distances)
 	return 1 / (1 + np.exp(np.sum((distances - residue_pair_thresholds) * residue_pair_k,axis=1)))
 
-if __name__=="__main__":
-	test_traj = mdtraj.load_xtc("test_RAS_WT_finetuned_v4/samples.xtc", top="test_RAS_WT_finetuned_v4/topology.pdb")
+def main():
+	p = argparse.ArgumentParser(
+        description="Yield state 1 occupancy of a KRAS mutant, given a BioEmu ensemble."
+    )
+    p.add_argument('--pdb',   required=True, help="Input PDB (Å)")
+    p.add_argument('--xtc',   required=True, help="Input trajectory XTC")
+    p.add_argument('--name',   required=True, help="Name of Mutant")
+    args = p.parse_args()
+	test_traj = mdtraj.load_xtc(args.xtc, top=args.pdb)
 	state_classification = getState(test_traj)
-	print("WT:\t" + str(np.sum(state_classification) / len(state_classification)))
+	print(args.name + ":\t" + str(np.sum(state_classification) / len(state_classification)))
+
+if __name__ == "__main__":
+    main()

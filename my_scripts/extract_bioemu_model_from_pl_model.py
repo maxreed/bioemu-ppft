@@ -1,8 +1,8 @@
 import torch
 from pathlib import Path
 
-lightning_ckpt_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt4/bioemu_finetune_output_v4/checkpoints/bioemu-foldedness-epoch=10-val/kras_CEST_refined_v4_epoch10.ckpt'
-output_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt4/bioemu_finetune_output_v4/checkpoints/kras_CEST_refined_v4_epoch10_bioemu.ckpt'
+lightning_ckpt_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt5/bioemu_finetune_output_v5/checkpoints/bioemu-foldedness-epoch=37-val/bioemu_cest_finetuned_v5_epoch37.ckpt'
+output_path = '/home/pmmreed/links/scratch/2026-02-26_bioemu_refinement_KRAS_CEST_attempt5/bioemu_finetune_output_v5/checkpoints/bioemu_cest_finetuned_v5_epoch37_properFormat.ckpt'
 
 # Load the Lightning checkpoint
 lightning_ckpt = torch.load(lightning_ckpt_path, map_location="cpu", weights_only=True)
