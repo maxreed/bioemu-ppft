@@ -2,7 +2,7 @@ import wandb
 import matplotlib.pyplot as plt
 
 api = wandb.Api()
-run = api.run("reed-maximilian/bioemu-foldedness-finetune/pious-spaceship-5")
+run = api.run("reed-maximilian-university-of-toronto/bioemu-foldedness-finetune/xagoqi7m")
 
 # Get the full history as a dataframe
 history = run.history()
