@@ -106,7 +106,7 @@ def compute_foldedness_differentiable(
 
     # Sigmoid over weighted sum of (distance - threshold): low distance -> high foldedness
     foldedness = torch.sigmoid(
-        torch.sum((distances_ang - thresholds) * k_values, dim=-1)
+        torch.sum((thresholds - distances_ang) * k_values, dim=-1)
     )  # (n_rep,), grad_fn intact
 
     return foldedness
