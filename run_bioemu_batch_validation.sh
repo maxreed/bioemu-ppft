@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:h100:1       # Number of GPUs (per node)
 #SBATCH --mem=16G               # memory (per node)
 #SBATCH --time=0-16:00          # time (DD-HH:MM)
-#SBATCH --output=run_bioemu_batch.log
+#SBATCH --output=run_bioemu_batch_validation.log
 
 module load StdEnv/2023 python/3.11 cuda/12.2 gcc/12.3
 source bioemu_env/bin/activate

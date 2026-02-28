@@ -24,7 +24,7 @@ def getState(traj: mdtraj.Trajectory, res_pairs=residue_pairs, thresholds=residu
 
 def main():
 	p = argparse.ArgumentParser(
-		description="Yield state 1 occupancy of a KRAS mutant, given a BioEmu ensemble."
+		description="Yield state 2 occupancy of a KRAS mutant, given a BioEmu ensemble."
 	)
 	p.add_argument('--pdb',   required=True, help="Input PDB (Å)")
 	p.add_argument('--xtc',   required=True, help="Input trajectory XTC")

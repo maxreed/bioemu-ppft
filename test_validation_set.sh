@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=1       # we actually don't need a GPU for this one
 #SBATCH --mem=16G               # memory (per node)
 #SBATCH --time=0-01:00          # time (DD-HH:MM)
-#SBATCH --output=test_job_newModel.log
+#SBATCH --output=test_validation_set.log
 
 module load StdEnv/2023 python/3.11 cuda/12.2 gcc/12.3
 source bioemu_env/bin/activate
