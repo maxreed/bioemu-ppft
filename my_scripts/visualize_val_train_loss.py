@@ -1,5 +1,6 @@
 import wandb
 import matplotlib.pyplot as plt
+import numpy as np
 
 api = wandb.Api()
 run = api.run("reed-maximilian-university-of-toronto/bioemu-foldedness-finetune/xagoqi7m")
@@ -13,8 +14,8 @@ train = history[["_step", "epoch", "train/loss"]].dropna()
 val = history[["_step", "epoch", "val/loss"]].dropna()
 
 # We'll add a smoothed loss for val loss to make it easier to interpret
-less_epochs = val["epoch"][1:-1]
-smoothed_val_loss = (val["val/loss"][2:]+val["val/loss"][1:-1]+val["val/loss"][:-2])/3.
+less_epochs = np.array(val["epoch"][1:-1])
+smoothed_val_loss = (np.array(val["val/loss"][2:])+np.array(val["val/loss"][1:-1])+np.array(val["val/loss"][:-2]))/3.
 
 ax.plot(train["epoch"], train["train/loss"], label="Train loss")
 ax.plot(val["epoch"], val["val/loss"], label="Val loss")
