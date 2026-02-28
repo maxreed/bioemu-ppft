@@ -17,7 +17,7 @@ def main():
 
     for msa_file in msa_files:
         print("Running BioEmu for " + os.path.basename(msa_file)[:-4] + "...") # -4 in the msa_file index removes the .a3m ending
-        sample(sequence=msa_file, num_samples=num_states, output_dir= args.out_dir + "/KRAS_" + os.path.basename(msa_file)[:-4], cpkt_path=args.cpkt_path, model_config_path=args.model_config_path)
+        sample(sequence=msa_file, num_samples=num_states, output_dir= args.out_dir + "/KRAS_" + os.path.basename(msa_file)[:-4], ckpt_path=args.ckpt_path, model_config_path=args.model_config_path)
 
 if __name__ == "__main__":
     main()
