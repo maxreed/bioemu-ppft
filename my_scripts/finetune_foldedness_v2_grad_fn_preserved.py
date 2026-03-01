@@ -474,6 +474,9 @@ class FoldednessFineTuner(pl.LightningModule):
 
         total_loss = total_loss / len(batch)
         self.log(f"{split}/loss", total_loss, prog_bar=True, batch_size=len(batch))
+        # Log absolute loss for checkpointing: we want the model closest to 0,
+        # not the most negative. val/loss_abs is what ModelCheckpoint monitors.
+        self.log(f"{split}/loss_abs", torch.abs(total_loss), prog_bar=False, batch_size=len(batch))
         return total_loss
 
     def training_step(self, batch: list[dict], batch_idx: int) -> torch.Tensor:
@@ -587,10 +590,18 @@ def main(args):
         LearningRateMonitor(logging_interval="step"),
         ModelCheckpoint(
             dirpath=os.path.join(args.output_dir, "checkpoints"),
-            filename="bioemu-foldedness-{epoch:02d}-{val/loss:.4f}",
+            filename="bioemu-foldedness-{epoch:02d}-{val/loss_abs:.4f}",
             save_top_k=3,
-            monitor="val/loss",
+            monitor="val/loss_abs",  # save checkpoints closest to loss=0, not most negative
             mode="min",
+        ),
+        ModelCheckpoint(
+            dirpath=os.path.join(args.output_dir, "checkpoints"),
+            filename="bioemu-foldedness-final",
+            save_last=False,      # don't overwrite every epoch
+            save_top_k=1,         # just keep the one final checkpoint
+            monitor="epoch",
+            mode="max",           # highest epoch number = final epoch
         ),
     ]
 
