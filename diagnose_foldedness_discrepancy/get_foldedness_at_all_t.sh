@@ -8,7 +8,7 @@
 #SBATCH --output=get_foldedness_at_all_t.log
 
 module load StdEnv/2023 python/3.11 cuda/12.2 gcc/12.3
-source bioemu_env/bin/activate
+source /home/pmmreed/links/projects/def-awoolley/pmmreed/bioemu_project/bioemu_env/bin/activate
 
 python diagnose_foldedness_trajectory.py \
     --msa_file /home/pmmreed/links/projects/def-awoolley/pmmreed/bioemu_project/data/msa_kras_mutants/WT.a3m \
