@@ -1,19 +1,83 @@
-2026-03-02 15:50:44,825 INFO __main__: Loading score model from /home/pmmreed/links/scratch/2026-03-01_bioemu_refinement_KRAS_CEST_attempt6/bioemu_finetune_output_v6/checkpoints/bioemu_cest_finetuned_v6_epoch199_properFormat.ckpt
-2026-03-02 15:51:40,351 INFO __main__: Loading SDEs from /home/pmmreed/links/scratch/2026-02-25_bioemu_refinement_KRAS_CEST_attempt1/checkpoints/bioemu-v1.1/config.yaml
-2026-03-02 15:51:40,400 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_igso3_s0.020-2.330-1000_l2000_o2000-3.npz
-2026-03-02 15:51:40,402 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_uso3_s0.020-2.330-1000_o2000-3.npz
-2026-03-02 15:51:40,404 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_score-scaling_s0.020-2.330-1000_l2001_o2000-3.npz
-2026-03-02 15:51:41,020 INFO __main__: Sequence length: 169 residues
-2026-03-02 15:51:41,141 INFO __main__: Using device: cuda:0
-2026-03-02 15:51:41,400 INFO bioemu.get_embeds: Using cached embeddings in /home/pmmreed/.bioemu_embeds_cache.
-2026-03-02 15:51:43,302 INFO __main__: Running 35-step denoising for 30 samples, probing every 1 steps. mid_t=0.77 ≈ step 8.
-Denoising:   0%|          | 0/34 [00:00<?, ?it/s]Denoising:   3%|▎         | 1/34 [00:01<01:04,  1.95s/it]Denoising:   6%|▌         | 2/34 [00:02<00:33,  1.05s/it]Denoising:   9%|▉         | 3/34 [00:02<00:23,  1.31it/s]Denoising:  12%|█▏        | 4/34 [00:03<00:18,  1.58it/s]Denoising:  15%|█▍        | 5/34 [00:03<00:16,  1.80it/s]Denoising:  18%|█▊        | 6/34 [00:04<00:14,  1.96it/s]Denoising:  21%|██        | 7/34 [00:04<00:13,  2.07it/s]Denoising:  24%|██▎       | 8/34 [00:04<00:12,  2.15it/s]Denoising:  26%|██▋       | 9/34 [00:05<00:11,  2.21it/s]Denoising:  29%|██▉       | 10/34 [00:05<00:10,  2.26it/s]Denoising:  32%|███▏      | 11/34 [00:06<00:10,  2.28it/s]Denoising:  35%|███▌      | 12/34 [00:06<00:09,  2.31it/s]Denoising:  38%|███▊      | 13/34 [00:07<00:09,  2.32it/s]Denoising:  41%|████      | 14/34 [00:07<00:08,  2.33it/s]Denoising:  44%|████▍     | 15/34 [00:07<00:08,  2.34it/s]Denoising:  47%|████▋     | 16/34 [00:08<00:07,  2.34it/s]Denoising:  50%|█████     | 17/34 [00:08<00:07,  2.35it/s]Denoising:  53%|█████▎    | 18/34 [00:09<00:06,  2.35it/s]Denoising:  56%|█████▌    | 19/34 [00:09<00:06,  2.35it/s]Denoising:  59%|█████▉    | 20/34 [00:10<00:05,  2.35it/s]Denoising:  62%|██████▏   | 21/34 [00:10<00:05,  2.35it/s]Denoising:  65%|██████▍   | 22/34 [00:10<00:05,  2.36it/s]Denoising:  68%|██████▊   | 23/34 [00:11<00:04,  2.36it/s]Denoising:  71%|███████   | 24/34 [00:11<00:04,  2.36it/s]Denoising:  74%|███████▎  | 25/34 [00:12<00:03,  2.36it/s]Denoising:  76%|███████▋  | 26/34 [00:12<00:03,  2.36it/s]Denoising:  79%|███████▉  | 27/34 [00:12<00:02,  2.36it/s]Denoising:  82%|████████▏ | 28/34 [00:13<00:02,  2.36it/s]Denoising:  85%|████████▌ | 29/34 [00:13<00:02,  2.36it/s]Denoising:  88%|████████▊ | 30/34 [00:14<00:01,  2.36it/s]Denoising:  91%|█████████ | 31/34 [00:14<00:01,  2.36it/s]Denoising:  94%|█████████▍| 32/34 [00:15<00:00,  2.36it/s]Denoising:  97%|█████████▋| 33/34 [00:15<00:00,  2.36it/s]Denoising: 100%|██████████| 34/34 [00:15<00:00,  2.36it/s]Denoising: 100%|██████████| 34/34 [00:15<00:00,  2.13it/s]
-2026-03-02 15:51:59,261 INFO __main__: Final foldedness (direct, no skip): mean=0.680 ± 0.449
-2026-03-02 15:51:59,270 INFO __main__: Saving final structures as PDB + XTC...
-2026-03-02 15:52:00,192 INFO __main__: Saved plot to foldedness_trajectory_diagnostic/foldedness_trajectory.png
-2026-03-02 15:52:00,220 INFO __main__: Saved trajectory CSV to foldedness_trajectory_diagnostic/foldedness_trajectory.csv
-2026-03-02 15:52:00,220 INFO __main__: 
---- Summary ---
-  mid_t=0.77 (step ~8): mean foldedness = 0.867 ± 0.340
-  Final (skip-to-x0): mean = 0.659 ± 0.464
-  Final (direct, no skip): mean = 0.680 ± 0.449
+2026-03-02 16:17:19,030 INFO __main__: Loading score model from /home/pmmreed/links/scratch/2026-03-01_bioemu_refinement_KRAS_CEST_attempt6/bioemu_finetune_output_v6/checkpoints/bioemu_cest_finetuned_v6_epoch199_properFormat.ckpt
+2026-03-02 16:18:13,814 INFO __main__: Loading SDEs from /home/pmmreed/links/scratch/2026-02-25_bioemu_refinement_KRAS_CEST_attempt1/checkpoints/bioemu-v1.1/config.yaml
+2026-03-02 16:18:13,933 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_igso3_s0.020-2.330-1000_l2000_o2000-3.npz
+2026-03-02 16:18:13,935 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_uso3_s0.020-2.330-1000_o2000-3.npz
+2026-03-02 16:18:13,937 INFO bioemu.so3_sde: Data loaded from /home/pmmreed/sampling_so3_cache/cache_score-scaling_s0.020-2.330-1000_l2001_o2000-3.npz
+2026-03-02 16:18:14,604 INFO __main__: Sequence length: 169 residues
+2026-03-02 16:18:14,742 INFO __main__: Using device: cuda:0
+2026-03-02 16:18:14,974 INFO bioemu.get_embeds: Using cached embeddings in /home/pmmreed/.bioemu_embeds_cache.
+2026-03-02 16:18:18,126 INFO __main__: Running 35-step denoising for 400 samples, probing every 1 steps. mid_t=0.77 ≈ step 8.
+Denoising:   0%|          | 0/34 [00:00<?, ?it/s]Denoising:   0%|          | 0/34 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/diagnose_foldedness_discrepancy/diagnose_foldedness_trajectory.py", line 631, in <module>
+    main(args)
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/diagnose_foldedness_discrepancy/diagnose_foldedness_trajectory.py", line 532, in main
+    results = run_trajectory_diagnostic(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/diagnose_foldedness_discrepancy/diagnose_foldedness_trajectory.py", line 309, in run_trajectory_diagnostic
+    score = get_score(batch=batch_hat, t=t_hat, score_model=score_model, sdes=sdes)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/denoiser.py", line 127, in get_score
+    tmp = score_model(batch, t)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/models.py", line 381, in forward
+    (pos, node_orientations) = self.model_nn(
+                               ^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/models.py", line 303, in forward
+    ) = self.st_module(  # st_module plays an equivalent role to BackboneUpdate in the Algorithm 20 of AF2 supplement.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/structure_module.py", line 346, in forward
+    x1d = self.encoder(x1d, x2d, pose, bias, context=context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/structure_module.py", line 318, in forward
+    x1d = module(
+          ^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/structure_module.py", line 293, in forward
+    x1d = x1d + self.attn(self.norm1(x1d), x2d, pose, bias)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/code/bioemu/src/bioemu/structure_module.py", line 215, in forward
+    out_pair = torch.einsum("bhij,bijhc->bihc", attn, v_pair)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lustre09/project/6003153/pmmreed/bioemu_project/bioemu_env/lib/python3.11/site-packages/torch/functional.py", line 373, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 21.79 GiB. GPU 0 has a total capacity of 79.19 GiB of which 16.58 GiB is free. Including non-PyTorch memory, this process has 62.60 GiB memory in use. Of the allocated memory 51.51 GiB is allocated by PyTorch, and 10.42 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
