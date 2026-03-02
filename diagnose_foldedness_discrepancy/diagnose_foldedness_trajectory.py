@@ -201,8 +201,11 @@ def _get_x0_from_batch(
     alpha_t, sigma_t = pos_sde.mean_coeff_and_std(
         x=batch.pos, t=t, batch_idx=batch.batch
     )
-    # x0 = (x_t - sigma_t * score) / alpha_t
-    x0_pos_flat = (batch.pos - sigma_t * score["pos"]) / alpha_t
+    # Correct VP-SDE x0 prediction: x0 = (x_t + sigma_t^2 * score) / alpha_t
+    # Derivation: score = -epsilon / sigma_t, and x_t = alpha_t * x0 + sigma_t * epsilon,
+    # so x0 = (x_t - sigma_t * epsilon) / alpha_t = (x_t + sigma_t^2 * score) / alpha_t.
+    # Previous version had wrong sign and was missing one factor of sigma_t.
+    x0_pos_flat = (batch.pos + sigma_t**2 * score["pos"]) / alpha_t
     # Reshape from (batch_size * n_residues, 3) -> (batch_size, n_residues, 3)
     n_residues = batch.pos.shape[0] // batch_size
     x0_pos_stack = x0_pos_flat.view(batch_size, n_residues, 3)
