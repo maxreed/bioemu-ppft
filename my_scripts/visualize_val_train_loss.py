@@ -15,11 +15,11 @@ val = history[["_step", "epoch", "val/loss"]].dropna()
 
 # We'll add a smoothed loss for val loss to make it easier to interpret
 less_epochs = np.array(val["epoch"][1:-1])
-smoothed_val_loss = (np.array(val["val/loss"][2:])+np.array(val["val/loss"][1:-1])+np.array(val["val/loss"][:-2]))/3.
+#smoothed_val_loss = (np.array(val["val/loss"][2:])+np.array(val["val/loss"][1:-1])+np.array(val["val/loss"][:-2]))/3.
 
 ax.plot(train["epoch"], train["train/loss"], label="Train loss")
 ax.plot(val["epoch"], val["val/loss"], label="Val loss")
-ax.plot(less_epochs, smoothed_val_loss, label="Val loss (Smoothed)", linewidth=4)
+#ax.plot(less_epochs, smoothed_val_loss, label="Val loss (Smoothed)", linewidth=4)
 
 ax.set_xlabel("Epoch")
 ax.set_ylabel("Loss")
