@@ -17,7 +17,7 @@ python diagnose_foldedness_trajectory.py \
     --cache_so3 /home/pmmreed/sampling_so3_cache \
     --cache_embeds_dir /home/pmmreed/.bioemu_embeds_cache \
     --output_dir foldedness_trajectory_diagnostic \
-    --num_samples 400 \
+    --num_samples 200 \
     --N_full 35 \
     --N_probe 1 \
     --max_t 0.99 \
