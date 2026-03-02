@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 api = wandb.Api()
-run = api.run("reed-maximilian-university-of-toronto/bioemu-foldedness-finetune/xagoqi7m")
+run = api.run("reed-maximilian-university-of-toronto/bioemu-foldedness-finetune/1k762vop")
 
 history = run.history()
 
@@ -27,5 +27,5 @@ ax.set_title("Foldedness fine-tuning loss")
 ax.legend()
 ax.axhline(y=0, color="grey", linestyle="--", linewidth=0.8)  # helpful reference for negative loss
 
-fig.savefig("loss_curve.png", dpi=150, bbox_inches="tight")
+fig.savefig("loss_curve_v6.png", dpi=150, bbox_inches="tight")
 print("Saved loss_curve.png")
