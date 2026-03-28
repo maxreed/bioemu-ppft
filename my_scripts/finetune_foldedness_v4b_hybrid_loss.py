@@ -85,10 +85,6 @@ def compute_foldedness_differentiable(
     """
     Compute foldedness scores for a batch of structures, fully differentiable.
 
-    Replaces the previous mdtraj-based compute_foldedness. By operating directly
-    on the PyTorch position tensor, gradients flow through the distance computation
-    and sigmoid back to the score model — no surrogate trick needed.
-
     The foldedness score for each structure is:
         f = sigmoid( sum_pairs( (d_pair - threshold) * k ) )
     where d_pair is the CA-CA distance in angstroms. This gives f ≈ 0 for
@@ -99,7 +95,7 @@ def compute_foldedness_differentiable(
                       CA coordinates in nm, grad_fn intact from score model.
 
     Returns:
-        foldedness: Tensor of shape (n_replications,) in [0, 1], grad_fn intact.
+        foldedness: Tensor of shape (n_replications,) in [0, 1].
     """
     device = x0_pos_stack.device
     pair_indices = _RESIDUE_PAIRS.to(device)       # (n_pairs, 2)
@@ -180,7 +176,7 @@ class FoldednessDataset(Dataset):
     Each item is a dict with:
         - "mutant_name": str
         - "sequence": str
-        - "target_foldedness": float in [0, 1]
+        - "target_foldedness": float in [0, 1] (this is KRAS state 2 occupancy)
         - "single_embeds_file": Path
         - "pair_embeds_file": Path
 
@@ -268,8 +264,9 @@ class FoldednessDataset(Dataset):
 def foldedness_collate_fn(batch: list[dict]) -> list[dict]:
     """
     Simple collate: return the list of dicts as-is.
-    We handle batching manually in the training step because each mutant
-    needs its own rollout.
+    We handle batching manually in the training step because each mutant needs its own rollout.
+    In theory you can get rid of this and pass collate_fn=lambda batch: batch to DataLoader instead,
+    though this looks a bit cleaner and is more modular.
     """
     return batch
 
@@ -344,14 +341,12 @@ def rollout_and_score(
     x0_batch = x_mid.replace(pos=x0_pos)
     structures: list[ChemGraph] = [x0_batch.get_example(i) for i in range(n_replications)]
 
-    # Stack x0_pos per structure: (n_replications, n_residues, 3), grad_fn intact
+    # Stack x0_pos per structure: (n_replications, n_residues, 3)
     n_residues = len(sequence)
-    x0_pos_stack = torch.stack([s.pos for s in structures])  # keeps grad_fn
+    x0_pos_stack = torch.stack([s.pos for s in structures])
     assert x0_pos_stack.shape == (n_replications, n_residues, 3)
 
     # Compute foldedness scores differentiably directly from x0_pos_stack.
-    # grad_fn is preserved through the distance computation and sigmoid,
-    # so no surrogate trick is needed in estimate_squared_mean_error.
     foldedness_scores = compute_foldedness_differentiable(x0_pos_stack)
     assert foldedness_scores.shape == (n_replications,)
 
@@ -367,11 +362,9 @@ def estimate_squared_mean_error(
     """
     Unbiased estimate of (mean_foldedness - target)^2.
 
-    Since foldedness_scores is now fully differentiable (grad_fn intact through
-    the distance computation and sigmoid), this is a straightforward implementation
-    of the unbiased cross-product estimator from loss.py — no surrogate trick needed.
+    This is a straightforward implementation of the unbiased cross-product estimator from BioEmu's loss.py
 
-    For i.i.d. samples with f_i = foldedness of sample i and target mu:
+    For independent samples with f_i = foldedness of sample i and target mu:
         E[(mean(f) - mu)^2] estimated unbiasedly as:
         [sum_i(f_i - mu)]^2 - sum_i(f_i - mu)^2) / (n * (n-1))
 
@@ -391,8 +384,8 @@ def estimate_squared_mean_error(
 # =============================================================================
 class StructureLibrary:
     """
-    Lazy-loaded cache of CA positions (nm) and backbone orientation frames
-    from a pre-generated XTC ensemble.
+    For loading CA positions (nm) and backbone orientation frames
+    from a pre-generated XTC ensemble (made by BioEmu v1.1).
 
     Orientations are (3,3) rotation matrices per residue constructed from
     N, CA, C backbone atoms using Gram-Schmidt orthogonalisation, matching
@@ -442,7 +435,9 @@ class StructureLibrary:
         pos_n  = traj.xyz[:, n_indices,  :]
         pos_c  = traj.xyz[:, c_indices,  :]
 
-        # Zero-centre CA positions per frame (BioEmu prior is zero-mean)
+        # Zero-centre CA positions per frame (BioEmu prior is zero-mean).
+        # This is not required for the current setup, but I'll keep in case I generalize this function to
+        # take in any set of inputs (which may not be centered at the origin), not just BioEmu trajectories.
         pos_ca -= pos_ca.mean(axis=1, keepdims=True)
 
         # Build local frames via Gram-Schmidt: (n_frames, n_residues, 3, 3)
@@ -492,20 +487,17 @@ def compute_dsm_loss(
     device: torch.device,
 ) -> torch.Tensor:
     """
-    Denoising Score Matching loss for a single real structure.
+    Denoising Score Matching loss for a single example structure.
 
-    Given real x0 positions and backbone orientation frames extracted from the XTC:
+    Given x0 positions and backbone orientation frames extracted from the XTC:
       1. Sample a random noise level t ~ Uniform(0.05, 0.99).
       2. Corrupt x0 via the forward VP-SDE: x_t = alpha_t * x0 + sigma_t * eps.
-      3. Run the score model on x_t with real orientations.
+      3. Run the score model on x_t with orientations.
       4. Loss = MSE between predicted noise and actual noise (positions only).
-
-    Using real backbone frames (instead of identity placeholders) keeps the
-    forward pass physically meaningful and avoids NaN from NaN node_orientations.
     """
     pos_sde = sdes["pos"]
 
-    # Build batch with real positions and real backbone frames
+    # Build batch with positions and backbone frames
     batch = Batch.from_data_list([context_chemgraph]).to(device)
     batch = batch.replace(pos=x0_pos_nm, node_orientations=x0_orientations)
 
@@ -558,7 +550,7 @@ class FoldednessFineTuner(pl.LightningModule):
         n_replications: int = 8,    # Structures per mutant; minimum 2, paper used 2; more = lower variance, higher cost
         mid_t: float = 0.77,        # Rollout endpoint; ~0.77 matches paper (8/35 explicit steps)
         N_rollout: int = 8,         # Number of explicit denoising steps (paper used 8 out of 35 total)
-        record_grad_steps: tuple = (6, 7, 8),  # Last 3 of 8 explicit steps; matches paper (steps 3,4,5 of 5 grad steps)
+        record_grad_steps: tuple = (6, 7, 8),  # Last 3 of 8 explicit steps
         trainable_components: list[str] = None, # I can now name the individual components of the model I want to train
         dsm_weight: float = 0.1,    # Weight for DSM regularisation loss (0.0 = PPFT only)
     ):
