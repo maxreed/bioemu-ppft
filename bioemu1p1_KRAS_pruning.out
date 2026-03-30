@@ -1,0 +1,1075 @@
+Batch mode: found 82 KRAS_* subdirectories in /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS
+
+════════════════════════════════════════════════════════════════════
+  Mutant: A130V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9102
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_A130V/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3476
+  Frames removed   : 604 / 972  (62.1%)
+  Final foldedness : 0.8907  (target 0.9102, diff 0.0195)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_A130V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: A155C
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9193
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_A155C/samples.xtc ...
+  974 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5309
+  Frames removed   : 411 / 974  (42.2%)
+  Final foldedness : 0.9004  (target 0.9193, diff 0.0189)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_A155C/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: C51A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8976
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_C51A/samples.xtc ...
+  983 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4883
+  Frames removed   : 451 / 983  (45.9%)
+  Final foldedness : 0.8783  (target 0.8976, diff 0.0193)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_C51A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: C80I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8136
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_C80I/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4368
+  Frames removed   : 448 / 977  (45.9%)
+  Final foldedness : 0.7944  (target 0.8136, diff 0.0192)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_C80I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: D92N
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9051
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_D92N/samples.xtc ...
+  985 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5190
+  Frames removed   : 417 / 985  (42.3%)
+  Final foldedness : 0.8853  (target 0.9051, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_D92N/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: E162L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9044
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E162L/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4917
+  Frames removed   : 445 / 972  (45.8%)
+  Final foldedness : 0.8855  (target 0.9044, diff 0.0189)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E162L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: E76A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.7508
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E76A/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5313
+  Frames removed   : 277 / 980  (28.3%)
+  Final foldedness : 0.7311  (target 0.7508, diff 0.0197)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E76A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: E76Q
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8845
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E76Q/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4903
+  Frames removed   : 435 / 977  (44.5%)
+  Final foldedness : 0.8651  (target 0.8845, diff 0.0194)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E76Q/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: E98D
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8931
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E98D/samples.xtc ...
+  983 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5137
+  Frames removed   : 417 / 983  (42.4%)
+  Final foldedness : 0.8740  (target 0.8931, diff 0.0191)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E98D/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: E98Q
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8950
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E98Q/samples.xtc ...
+  987 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3935
+  Frames removed   : 556 / 987  (56.3%)
+  Final foldedness : 0.8770  (target 0.8950, diff 0.0180)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_E98Q/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F141Y
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8958
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F141Y/samples.xtc ...
+  982 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3464
+  Frames removed   : 607 / 982  (61.8%)
+  Final foldedness : 0.8774  (target 0.8958, diff 0.0184)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F141Y/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F156Y
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9189
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F156Y/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4550
+  Frames removed   : 494 / 976  (50.6%)
+  Final foldedness : 0.8998  (target 0.9189, diff 0.0191)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F156Y/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F78Y
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8224
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F78Y/samples.xtc ...
+  981 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4079
+  Frames removed   : 494 / 981  (50.4%)
+  Final foldedness : 0.8027  (target 0.8224, diff 0.0197)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F78Y/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F82Y
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8883
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F82Y/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4168
+  Frames removed   : 520 / 972  (53.5%)
+  Final foldedness : 0.8683  (target 0.8883, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F82Y/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F90W
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9323
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F90W/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5106
+  Frames removed   : 441 / 971  (45.4%)
+  Final foldedness : 0.9128  (target 0.9323, diff 0.0195)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F90W/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: F90Y
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9113
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F90Y/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3953
+  Frames removed   : 549 / 972  (56.5%)
+  Final foldedness : 0.8916  (target 0.9113, diff 0.0197)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_F90Y/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: H166Q
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8976
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_H166Q/samples.xtc ...
+  981 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4874
+  Frames removed   : 450 / 981  (45.9%)
+  Final foldedness : 0.8785  (target 0.8976, diff 0.0191)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_H166Q/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: H95K
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8968
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_H95K/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5153
+  Frames removed   : 414 / 980  (42.2%)
+  Final foldedness : 0.8773  (target 0.8968, diff 0.0195)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_H95K/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I100V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8495
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I100V/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4106
+  Frames removed   : 499 / 971  (51.4%)
+  Final foldedness : 0.8296  (target 0.8495, diff 0.0199)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I100V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I139V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9005
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I139V/samples.xtc ...
+  984 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3117
+  Frames removed   : 647 / 984  (65.8%)
+  Final foldedness : 0.8812  (target 0.9005, diff 0.0193)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I139V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I142F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8873
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I142F/samples.xtc ...
+  979 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3864
+  Frames removed   : 554 / 979  (56.6%)
+  Final foldedness : 0.8674  (target 0.8873, diff 0.0199)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I142F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I163M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9365
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I163M/samples.xtc ...
+  979 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4424
+  Frames removed   : 520 / 979  (53.1%)
+  Final foldedness : 0.9182  (target 0.9365, diff 0.0183)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I163M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I163V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8897
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I163V/samples.xtc ...
+  979 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4146
+  Frames removed   : 525 / 979  (53.6%)
+  Final foldedness : 0.8708  (target 0.8897, diff 0.0189)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I163V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I55V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.7963
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I55V/samples.xtc ...
+  979 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4898
+  Frames removed   : 371 / 979  (37.9%)
+  Final foldedness : 0.7765  (target 0.7963, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I55V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I84M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8880
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I84M/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4897
+  Frames removed   : 436 / 971  (44.9%)
+  Final foldedness : 0.8692  (target 0.8880, diff 0.0188)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I84M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I84V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9009
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I84V/samples.xtc ...
+  978 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4673
+  Frames removed   : 469 / 978  (48.0%)
+  Final foldedness : 0.8814  (target 0.9009, diff 0.0195)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I84V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I93M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8953
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I93M/samples.xtc ...
+  968 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4907
+  Frames removed   : 436 / 968  (45.0%)
+  Final foldedness : 0.8759  (target 0.8953, diff 0.0194)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I93M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: I93V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8950
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I93V/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3451
+  Frames removed   : 605 / 980  (61.7%)
+  Final foldedness : 0.8758  (target 0.8950, diff 0.0192)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_I93V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: K101R
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8989
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K101R/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3995
+  Frames removed   : 549 / 977  (56.2%)
+  Final foldedness : 0.8805  (target 0.8989, diff 0.0184)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K101R/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: K104A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8745
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104A/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4471
+  Frames removed   : 479 / 980  (48.9%)
+  Final foldedness : 0.8560  (target 0.8745, diff 0.0185)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: K104N
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8536
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104N/samples.xtc ...
+  973 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4183
+  Frames removed   : 499 / 973  (51.3%)
+  Final foldedness : 0.8349  (target 0.8536, diff 0.0187)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104N/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: K104T
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8528
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104T/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4713
+  Frames removed   : 437 / 980  (44.6%)
+  Final foldedness : 0.8331  (target 0.8528, diff 0.0197)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K104T/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: K167E
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8776
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K167E/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3956
+  Frames removed   : 541 / 980  (55.2%)
+  Final foldedness : 0.8578  (target 0.8776, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_K167E/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L113I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8848
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L113I/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4804
+  Frames removed   : 445 / 977  (45.5%)
+  Final foldedness : 0.8649  (target 0.8848, diff 0.0199)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L113I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L133M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9013
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L133M/samples.xtc ...
+  969 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3770
+  Frames removed   : 564 / 969  (58.2%)
+  Final foldedness : 0.8813  (target 0.9013, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L133M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L133V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8966
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L133V/samples.xtc ...
+  979 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4382
+  Frames removed   : 502 / 979  (51.3%)
+  Final foldedness : 0.8766  (target 0.8966, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L133V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L159V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8408
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L159V/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4304
+  Frames removed   : 475 / 972  (48.9%)
+  Final foldedness : 0.8209  (target 0.8408, diff 0.0199)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L159V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L23M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.7065
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L23M/samples.xtc ...
+  970 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4612
+  Frames removed   : 327 / 970  (33.7%)
+  Final foldedness : 0.6865  (target 0.7065, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L23M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L52M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8964
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L52M/samples.xtc ...
+  974 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3554
+  Frames removed   : 592 / 974  (60.8%)
+  Final foldedness : 0.8781  (target 0.8964, diff 0.0183)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L52M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L52V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8961
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L52V/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4438
+  Frames removed   : 495 / 971  (51.0%)
+  Final foldedness : 0.8773  (target 0.8961, diff 0.0188)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L52V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L53M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8778
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L53M/samples.xtc ...
+  981 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3933
+  Frames removed   : 545 / 981  (55.6%)
+  Final foldedness : 0.8597  (target 0.8778, diff 0.0181)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L53M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L53V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8285
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L53V/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4102
+  Frames removed   : 493 / 976  (50.5%)
+  Final foldedness : 0.8091  (target 0.8285, diff 0.0194)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L53V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L6M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8624
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L6M/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4070
+  Frames removed   : 519 / 971  (53.5%)
+  Final foldedness : 0.8437  (target 0.8624, diff 0.0187)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L6M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L79M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8861
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L79M/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.2998
+  Frames removed   : 653 / 975  (67.0%)
+  Final foldedness : 0.8687  (target 0.8861, diff 0.0174)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L79M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: L79V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8363
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L79V/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4603
+  Frames removed   : 434 / 972  (44.7%)
+  Final foldedness : 0.8163  (target 0.8363, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_L79V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: M111F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8973
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M111F/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4880
+  Frames removed   : 445 / 976  (45.6%)
+  Final foldedness : 0.8783  (target 0.8973, diff 0.0190)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M111F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: M72F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8968
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72F/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3276
+  Frames removed   : 627 / 980  (64.0%)
+  Final foldedness : 0.8790  (target 0.8968, diff 0.0178)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: M72L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8234
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72L/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3197
+  Frames removed   : 602 / 977  (61.6%)
+  Final foldedness : 0.8054  (target 0.8234, diff 0.0180)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: M72V
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8778
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72V/samples.xtc ...
+  967 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4857
+  Frames removed   : 430 / 967  (44.5%)
+  Final foldedness : 0.8580  (target 0.8778, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_M72V/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: P110A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9023
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_P110A/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4608
+  Frames removed   : 480 / 975  (49.2%)
+  Final foldedness : 0.8831  (target 0.9023, diff 0.0192)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_P110A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Q22N
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8376
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Q22N/samples.xtc ...
+  960 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3080
+  Frames removed   : 611 / 960  (63.6%)
+  Final foldedness : 0.8199  (target 0.8376, diff 0.0177)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Q22N/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Q61R
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9807
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Q61R/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4403
+  Frames removed   : 545 / 980  (55.6%)
+  Final foldedness : 0.9614  (target 0.9807, diff 0.0193)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Q61R/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R149H
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8922
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R149H/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3976
+  Frames removed   : 545 / 976  (55.8%)
+  Final foldedness : 0.8741  (target 0.8922, diff 0.0181)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R149H/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R149K
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8915
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R149K/samples.xtc ...
+  969 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4735
+  Frames removed   : 455 / 969  (47.0%)
+  Final foldedness : 0.8731  (target 0.8915, diff 0.0184)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R149K/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R68L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8848
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R68L/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5564
+  Frames removed   : 357 / 975  (36.6%)
+  Final foldedness : 0.8660  (target 0.8848, diff 0.0188)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R68L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R73H
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8925
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R73H/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4415
+  Frames removed   : 496 / 976  (50.8%)
+  Final foldedness : 0.8737  (target 0.8925, diff 0.0188)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R73H/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R73S
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8761
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R73S/samples.xtc ...
+  964 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4522
+  Frames removed   : 468 / 964  (48.5%)
+  Final foldedness : 0.8568  (target 0.8761, diff 0.0193)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R73S/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: R97H
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9211
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R97H/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4716
+  Frames removed   : 477 / 976  (48.9%)
+  Final foldedness : 0.9029  (target 0.9211, diff 0.0182)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_R97H/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: S89T
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8817
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_S89T/samples.xtc ...
+  981 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3721
+  Frames removed   : 572 / 981  (58.3%)
+  Final foldedness : 0.8618  (target 0.8817, diff 0.0199)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_S89T/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: T158L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8941
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_T158L/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4606
+  Frames removed   : 466 / 971  (48.0%)
+  Final foldedness : 0.8755  (target 0.8941, diff 0.0186)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_T158L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: T58S
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.5694
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_T58S/samples.xtc ...
+  970 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4055
+  Frames removed   : 260 / 970  (26.8%)
+  Final foldedness : 0.5494  (target 0.5694, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_T58S/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V103A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8816
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V103A/samples.xtc ...
+  982 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4135
+  Frames removed   : 523 / 982  (53.3%)
+  Final foldedness : 0.8625  (target 0.8816, diff 0.0191)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V103A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V103L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.7820
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V103L/samples.xtc ...
+  978 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3485
+  Frames removed   : 540 / 978  (55.2%)
+  Final foldedness : 0.7622  (target 0.7820, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V103L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V109I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9066
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V109I/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3592
+  Frames removed   : 592 / 972  (60.9%)
+  Final foldedness : 0.8881  (target 0.9066, diff 0.0185)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V109I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V109M
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8722
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V109M/samples.xtc ...
+  978 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4404
+  Frames removed   : 487 / 978  (49.8%)
+  Final foldedness : 0.8526  (target 0.8722, diff 0.0196)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V109M/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V112I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8606
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V112I/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4596
+  Frames removed   : 454 / 975  (46.6%)
+  Final foldedness : 0.8414  (target 0.8606, diff 0.0192)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V112I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V114I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9137
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V114I/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4834
+  Frames removed   : 461 / 976  (47.2%)
+  Final foldedness : 0.8941  (target 0.9137, diff 0.0196)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V114I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V125I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9025
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V125I/samples.xtc ...
+  977 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3761
+  Frames removed   : 572 / 977  (58.5%)
+  Final foldedness : 0.8825  (target 0.9025, diff 0.0200)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V125I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V160A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9025
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V160A/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3429
+  Frames removed   : 610 / 975  (62.6%)
+  Final foldedness : 0.8833  (target 0.9025, diff 0.0192)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V160A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V160I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8807
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V160I/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.5104
+  Frames removed   : 410 / 980  (41.8%)
+  Final foldedness : 0.8616  (target 0.8807, diff 0.0191)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V160I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V44A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9122
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V44A/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3898
+  Frames removed   : 564 / 980  (57.6%)
+  Final foldedness : 0.8933  (target 0.9122, diff 0.0189)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V44A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V7I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8795
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V7I/samples.xtc ...
+  975 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3173
+  Frames removed   : 626 / 975  (64.2%)
+  Final foldedness : 0.8608  (target 0.8795, diff 0.0187)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V7I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V8I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8903
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V8I/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4268
+  Frames removed   : 513 / 980  (52.3%)
+  Final foldedness : 0.8720  (target 0.8903, diff 0.0183)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V8I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: V9I
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8872
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V9I/samples.xtc ...
+  972 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4669
+  Frames removed   : 459 / 972  (47.2%)
+  Final foldedness : 0.8676  (target 0.8872, diff 0.0196)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_V9I/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: WT
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8986
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_WT/samples.xtc ...
+  973 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4925
+  Frames removed   : 440 / 973  (45.2%)
+  Final foldedness : 0.8788  (target 0.8986, diff 0.0198)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_WT/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y40F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.6908
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y40F/samples.xtc ...
+  971 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4339
+  Frames removed   : 356 / 971  (36.7%)
+  Final foldedness : 0.6718  (target 0.6908, diff 0.0190)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y40F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y4F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8998
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y4F/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4773
+  Frames removed   : 459 / 980  (46.8%)
+  Final foldedness : 0.8805  (target 0.8998, diff 0.0193)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y4F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y64A
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.7928
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y64A/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4271
+  Frames removed   : 451 / 980  (46.0%)
+  Final foldedness : 0.7734  (target 0.7928, diff 0.0194)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y64A/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y71F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.8638
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y71F/samples.xtc ...
+  978 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.2562
+  Frames removed   : 690 / 978  (70.6%)
+  Final foldedness : 0.8448  (target 0.8638, diff 0.0190)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y71F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y96F
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9309
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96F/samples.xtc ...
+  982 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4386
+  Frames removed   : 520 / 982  (53.0%)
+  Final foldedness : 0.9122  (target 0.9309, diff 0.0187)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96F/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y96L
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9206
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96L/samples.xtc ...
+  980 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.4820
+  Frames removed   : 472 / 980  (48.2%)
+  Final foldedness : 0.9022  (target 0.9206, diff 0.0184)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96L/samples_pruned.xtc
+
+════════════════════════════════════════════════════════════════════
+  Mutant: Y96W
+════════════════════════════════════════════════════════════════════
+  Target foldedness: 0.9364
+  Loading trajectory: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96W/samples.xtc ...
+  976 frames loaded.
+  Computing per-frame foldedness ...
+  Initial foldedness: 0.3646
+  Frames removed   : 602 / 976  (61.7%)
+  Final foldedness : 0.9169  (target 0.9364, diff 0.0195)
+  Saved: /lustre09/project/6003153/pmmreed/bioemu_project/outputs/bioemu1p1_KRAS/KRAS_Y96W/samples_pruned.xtc
+
+
+════════════════════════════════════════════════════════════════════════════════════════
+  BATCH SUMMARY
+════════════════════════════════════════════════════════════════════════════════════════
+  Mutant        Original    Kept   Removed%   Initial     Final    Target    Diff  Status
+  ------------  --------  ------  ---------  --------  --------  --------  ------  ------
+  A130V              972     368      62.1%    0.3476    0.8907    0.9102  0.0195  OK
+  A155C              974     563      42.2%    0.5309    0.9004    0.9193  0.0189  OK
+  C51A               983     532      45.9%    0.4883    0.8783    0.8976  0.0193  OK
+  C80I               977     529      45.9%    0.4368    0.7944    0.8136  0.0192  OK
+  D92N               985     568      42.3%    0.5190    0.8853    0.9051  0.0198  OK
+  E162L              972     527      45.8%    0.4917    0.8855    0.9044  0.0189  OK
+  E76A               980     703      28.3%    0.5313    0.7311    0.7508  0.0197  OK
+  E76Q               977     542      44.5%    0.4903    0.8651    0.8845  0.0194  OK
+  E98D               983     566      42.4%    0.5137    0.8740    0.8931  0.0191  OK
+  E98Q               987     431      56.3%    0.3935    0.8770    0.8950  0.0180  OK
+  F141Y              982     375      61.8%    0.3464    0.8774    0.8958  0.0184  OK
+  F156Y              976     482      50.6%    0.4550    0.8998    0.9189  0.0191  OK
+  F78Y               981     487      50.4%    0.4079    0.8027    0.8224  0.0197  OK
+  F82Y               972     452      53.5%    0.4168    0.8683    0.8883  0.0200  OK
+  F90W               971     530      45.4%    0.5106    0.9128    0.9323  0.0195  OK
+  F90Y               972     423      56.5%    0.3953    0.8916    0.9113  0.0197  OK
+  H166Q              981     531      45.9%    0.4874    0.8785    0.8976  0.0191  OK
+  H95K               980     566      42.2%    0.5153    0.8773    0.8968  0.0195  OK
+  I100V              971     472      51.4%    0.4106    0.8296    0.8495  0.0199  OK
+  I139V              984     337      65.8%    0.3117    0.8812    0.9005  0.0193  OK
+  I142F              979     425      56.6%    0.3864    0.8674    0.8873  0.0199  OK
+  I163M              979     459      53.1%    0.4424    0.9182    0.9365  0.0183  OK
+  I163V              979     454      53.6%    0.4146    0.8708    0.8897  0.0189  OK
+  I55V               979     608      37.9%    0.4898    0.7765    0.7963  0.0198  OK
+  I84M               971     535      44.9%    0.4897    0.8692    0.8880  0.0188  OK
+  I84V               978     509      48.0%    0.4673    0.8814    0.9009  0.0195  OK
+  I93M               968     532      45.0%    0.4907    0.8759    0.8953  0.0194  OK
+  I93V               980     375      61.7%    0.3451    0.8758    0.8950  0.0192  OK
+  K101R              977     428      56.2%    0.3995    0.8805    0.8989  0.0184  OK
+  K104A              980     501      48.9%    0.4471    0.8560    0.8745  0.0185  OK
+  K104N              973     474      51.3%    0.4183    0.8349    0.8536  0.0187  OK
+  K104T              980     543      44.6%    0.4713    0.8331    0.8528  0.0197  OK
+  K167E              980     439      55.2%    0.3956    0.8578    0.8776  0.0198  OK
+  L113I              977     532      45.5%    0.4804    0.8649    0.8848  0.0199  OK
+  L133M              969     405      58.2%    0.3770    0.8813    0.9013  0.0200  OK
+  L133V              979     477      51.3%    0.4382    0.8766    0.8966  0.0200  OK
+  L159V              972     497      48.9%    0.4304    0.8209    0.8408  0.0199  OK
+  L23M               970     643      33.7%    0.4612    0.6865    0.7065  0.0200  OK
+  L52M               974     382      60.8%    0.3554    0.8781    0.8964  0.0183  OK
+  L52V               971     476      51.0%    0.4438    0.8773    0.8961  0.0188  OK
+  L53M               981     436      55.6%    0.3933    0.8597    0.8778  0.0181  OK
+  L53V               976     483      50.5%    0.4102    0.8091    0.8285  0.0194  OK
+  L6M                971     452      53.5%    0.4070    0.8437    0.8624  0.0187  OK
+  L79M               975     322      67.0%    0.2998    0.8687    0.8861  0.0174  OK
+  L79V               972     538      44.7%    0.4603    0.8163    0.8363  0.0200  OK
+  M111F              976     531      45.6%    0.4880    0.8783    0.8973  0.0190  OK
+  M72F               980     353      64.0%    0.3276    0.8790    0.8968  0.0178  OK
+  M72L               977     375      61.6%    0.3197    0.8054    0.8234  0.0180  OK
+  M72V               967     537      44.5%    0.4857    0.8580    0.8778  0.0198  OK
+  P110A              975     495      49.2%    0.4608    0.8831    0.9023  0.0192  OK
+  Q22N               960     349      63.6%    0.3080    0.8199    0.8376  0.0177  OK
+  Q61R               980     435      55.6%    0.4403    0.9614    0.9807  0.0193  OK
+  R149H              976     431      55.8%    0.3976    0.8741    0.8922  0.0181  OK
+  R149K              969     514      47.0%    0.4735    0.8731    0.8915  0.0184  OK
+  R68L               975     618      36.6%    0.5564    0.8660    0.8848  0.0188  OK
+  R73H               976     480      50.8%    0.4415    0.8737    0.8925  0.0188  OK
+  R73S               964     496      48.5%    0.4522    0.8568    0.8761  0.0193  OK
+  R97H               976     499      48.9%    0.4716    0.9029    0.9211  0.0182  OK
+  S89T               981     409      58.3%    0.3721    0.8618    0.8817  0.0199  OK
+  T158L              971     505      48.0%    0.4606    0.8755    0.8941  0.0186  OK
+  T58S               970     710      26.8%    0.4055    0.5494    0.5694  0.0200  OK
+  V103A              982     459      53.3%    0.4135    0.8625    0.8816  0.0191  OK
+  V103L              978     438      55.2%    0.3485    0.7622    0.7820  0.0198  OK
+  V109I              972     380      60.9%    0.3592    0.8881    0.9066  0.0185  OK
+  V109M              978     491      49.8%    0.4404    0.8526    0.8722  0.0196  OK
+  V112I              975     521      46.6%    0.4596    0.8414    0.8606  0.0192  OK
+  V114I              976     515      47.2%    0.4834    0.8941    0.9137  0.0196  OK
+  V125I              977     405      58.5%    0.3761    0.8825    0.9025  0.0200  OK
+  V160A              975     365      62.6%    0.3429    0.8833    0.9025  0.0192  OK
+  V160I              980     570      41.8%    0.5104    0.8616    0.8807  0.0191  OK
+  V44A               980     416      57.6%    0.3898    0.8933    0.9122  0.0189  OK
+  V7I                975     349      64.2%    0.3173    0.8608    0.8795  0.0187  OK
+  V8I                980     467      52.3%    0.4268    0.8720    0.8903  0.0183  OK
+  V9I                972     513      47.2%    0.4669    0.8676    0.8872  0.0196  OK
+  WT                 973     533      45.2%    0.4925    0.8788    0.8986  0.0198  OK
+  Y40F               971     615      36.7%    0.4339    0.6718    0.6908  0.0190  OK
+  Y4F                980     521      46.8%    0.4773    0.8805    0.8998  0.0193  OK
+  Y64A               980     529      46.0%    0.4271    0.7734    0.7928  0.0194  OK
+  Y71F               978     288      70.6%    0.2562    0.8448    0.8638  0.0190  OK
+  Y96F               982     462      53.0%    0.4386    0.9122    0.9309  0.0187  OK
+  Y96L               980     508      48.2%    0.4820    0.9022    0.9206  0.0184  OK
+  Y96W               976     374      61.7%    0.3646    0.9169    0.9364  0.0195  OK
+════════════════════════════════════════════════════════════════════════════════════════
